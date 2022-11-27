@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/studenthome.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/status-table.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/catlog.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/viewjob.css') }}">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+<script src="{{url_for('static', filename='js/dropdownscripts.js')}}"></script>
+<body> 
+    <header class="global-header">
+        <div class="row">
+            <div class="global-logo">
+                <a href="/">LOGO</a>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="/studenthome">Home</a></li>
+                    <li id="services"><a href="#">Freelancing</a>
+                    <div class="sub-nav">
+                        <div class="sub-nav-col left">
+                            <a href="/webfreelancing" class="sub-nav-box" id="box-1">
+                                <div class="icon-background" id="icon-1">
+                                    <i class="fab fa-sellsy icon"></i>
+                                </div>
+                                <h4>Web Development</h4>
+                                <p>Full Stack, front-end & Back-end</p>
+                            </a>
+                            <a href="/mobileapplication" class="sub-nav-box" id="box-2">
+                                <div class="icon-background" id="icon-2">
+                                    <i class="fas fa-user-lock icon"></i>
+                                </div>
+                                <h4>Mobile Application Development</h4>
+                                <p>Android & IOS</p>
+                            </a>
+                            <a href="#" class="sub-nav-box" id="box-3">
+                                <div class="icon-background" id="icon-3">
+                                    <i class="fas fa-chart-line icon"></i>
+                                </div>
+                                <h4>Software Development</h4>
+                                <p>Tools,Testing,Deployment & Deve Ops</p>
+                            </a>
+                            <a href="#" class="sub-nav-box" id="box-4">
+                                <div class="icon-background" id="icon-4">
+                                    <i class="fas fa-hand-holding-usd icon"></i>
+                                </div>
+                                <h4>Graphics Design</h4>
+                                <p>UX/UI, 3d animation, Vectors, VFX</p>
+                            </a>
+                        </div>
+                        <div class="sub-nav-col right">
+                            <a href="#" class="sub-nav-box" id="box-5">
+                                <div class="icon-background" id="icon-5">
+                                    <i class="fas fa-trophy icon"></i>
+                                </div>
+                                <h4>Artificial Intelligence</h4>
+                                <p>Machine Learning, Neural Networks and Deep Learning</p>
+                            </a>
+                            <a href="#" class="sub-nav-box" id="box-6">
+                                <div class="icon-background" id="icon-6">
+                                    <i class="far fa-calendar-check icon"></i>
+                                </div>
+                                <h4>Networking</h4>
+                                <p>Device config and Testing</p>
+                            </a>
+                            <a href="#" class="sub-nav-box" id="box-7">
+                                <div class="icon-background" id="icon-7">
+                                    <i class="fas fa-briefcase icon"></i>
+                                </div>
+                                <h4>Security</h4>
+                                <p>Ethical,Penetration testing etc</p>
+                            </a>
+                            <a href="#" class="sub-nav-box" id="box-8">
+                                <div class="icon-background" id="icon-8">
+                                    <i class="fas fa-phone-alt icon"></i>
+                                </div>
+                                <h4>Cloud Computing</h4>
+                                <p>Aws, Google Cloud Platform etc</p>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+              
+                <div class="dropdown">
+                    <a href="#" class="dropbtn">Setting</a>
+                    <div class="dropdown-content">
+                      <a href="#">{{user.username}}</a>
+                      <a href="#">About us</a>
+                      <a href="/studenthome">Certificates</a>
+                      <a href="#">-------------------</a>
+                      <a href="/studentlogout">Logout</a>
+                    </div>
+                  </div>
+                  
+            </nav>
+        </div>
+    </header>
+{% block body %}
+
+{% endblock %}
+
+</body>
+</html>

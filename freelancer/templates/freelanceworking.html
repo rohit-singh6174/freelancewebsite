@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<!--Main Content -->
+<link href="{{ url_for('static', filename= 'css/table.css') }}" rel="stylesheet">
+<div class="minerPage" >  
+
+<h1>Freelance Working Status </h1>
+
+  <h4>Select the freelancers</h4> 
+
+<div class="stocks">  
+<table class="table">
+    <thead class="tabel-head">
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scorp="col">title</th>
+      <th scope="col">freelance</th>
+      <th scorp="col">start_date</th>
+      <th scope="col">Status</th>
+      
+    </thead>
+     <tbody>
+      
+      <tr>
+        {% for row in approved %}
+        <th scope="row">{{row.id}}</th>
+        
+        <td class="text-truncate" style="max-width: 100px;">
+          <a>{{row.stud_name}}</a>
+        </td>
+        <td class="text-truncate" style="max-width: 100px;">
+          <a>{{row.title}}</a>
+      </td>
+      <td class="text-truncate" style="max-width: 100px;">
+        <a>{{row.freelance}}</a>
+    </td>
+     <td class="text-truncate" style="max-width: 100px;">
+      <a>{{row.start_date}}</a>
+   </td>
+   <td>
+    <span class="approved-btn"><a href="/freelance_completed/{{row.id}}">Completed</a></span>
+    <span class="approved-btn"><a href="/freelance_notcompleted/{{row.id}}">Not Completed</a></span>
+   </td>
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+  </div>
+
+</div>
+
+<!--End Main Content-->
+{% endblock %}

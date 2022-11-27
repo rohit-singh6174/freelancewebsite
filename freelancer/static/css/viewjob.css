@@ -1,0 +1,126 @@
+.view-job-section{
+margin-top: 65px;
+width: 1500px;
+padding-top:20px;
+padding-bottom: 20px;
+margin-left:auto ;
+margin-right: auto;
+background-color:#F0F0F0;
+height: auto;
+}
+
+.job-title{
+    width: 100%;
+    background-color: #4169E1;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px; 
+}
+
+.job-title h1{
+    margin-left:100px ;
+
+}
+
+.job-details{
+    background-color: #fff;
+    padding: 20px;
+    
+}
+
+.job-details h1{
+    margin-bottom: 20px;
+}
+.job-details p{
+    margin-bottom: 10px;
+    line-height: 1.8;
+    
+}
+
+.viewjob-btn{
+    padding: 20px;
+    text-decoration: none;
+    background-color: #4169E1;
+    color: #fff;
+    margin-left: 90%;
+    margin-bottom: 20px;
+}
+
+.viewjob-btn:hover{
+    background-color: #0F52BA;
+}
+
+
+.apply-pop{
+    background-color: rgba(0, 0, 0, 0.6);
+    margin-top: 80px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.pop-content{
+    height:500px;
+    width: 500px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+    text-align: center;
+}
+.upload-btn,input[type=submit]{
+    padding: 20px;
+    text-decoration: none;
+    background-color: #4169E1;
+    color: #fff;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 80px;
+}
+.upload-btn,input[type=submit]:hover{
+    background-color: #0F52BA;
+
+}
+.pop-content input,label{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 300px;
+}
+
+.upload-btn{
+    margin-top: 10px;
+}
+
+.apply-btn{
+    text-decoration: none;
+    background-color: #4169E1;
+    padding: 20px;
+    color: #fff;
+    padding-left: 120px;
+    padding-right: 120px;
+    margin-left: 80px;
+}
+.apply-btn:hover{
+    background-color: #0F52BA;
+}
+
+.apply-close{
+    position: absolute;
+    top:-20px;
+    right: -20px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 6px 6px 29px -4px rgba(0,0,0,0.75);
+    cursor: pointer;
+}
+
+
+
+
+
+

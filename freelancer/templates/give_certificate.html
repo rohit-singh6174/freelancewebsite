@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<!--Main Content -->
+<link href="{{ url_for('static', filename= 'css/table.css') }}" rel="stylesheet">
+<div class="minerPage" >  
+
+<h1>Completed Freelance</h1>
+
+  <h4>freelancers</h4> 
+
+<div class="stocks">  
+<table class="table">
+    <thead class="tabel-head">
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scorp="col">title</th>
+      <th scope="col">freelance</th>
+      <th scorp="col">Start date</th>
+      <th scope="col">Completion date</th>
+      <th scope="col">Action</th>
+      
+    </thead>
+     <tbody>
+      
+      <tr>
+        {% for row in completed %}
+        <th scope="row">{{row.id}}</th>
+        
+        <td class="text-truncate" style="max-width: 100px;">
+          <a>{{row.stud_name}}</a>
+        </td>
+        <td class="text-truncate" style="max-width: 100px;">
+            <a>{{row.stud_email}}</a>
+        </td>
+        <td class="text-truncate" style="max-width: 100px;">
+          <a>{{row.title}}</a>
+      </td>
+      <td class="text-truncate" style="max-width: 100px;">
+        <a>{{row.freelance}}</a>
+    </td>
+     <td class="text-truncate" style="max-width: 100px;">
+      <a>{{row.start_date}}</a>
+   </td>
+   
+   <td class="text-truncate" style="max-width: 100px;">
+    <a>{{row.completion_date}}</a>
+ </td>
+ <td class="text-truncate" style="max-width: 100px;">
+  <a href="/upload_certificate/{{row.id}}"  class="btn btn-primary">Give Certificate</i></i></a>
+</td>
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+  </div>
+
+</div>
+
+<!--End Main Content-->
+{% endblock %}

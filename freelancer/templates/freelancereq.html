@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<!--Main Content -->
+<link href="{{ url_for('static', filename= 'css/table.css') }}" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="minerPage" >  
+
+<h1>Freelance Request</h1>
+
+  <h4>Select the freelancers</h4> 
+
+<div class="stocks">  
+<table class="table">
+    <thead class="tabel-head">
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">CV</th>
+      <th scorp="col">title</th>
+      <th scope="col">freelance</th>
+      <th scorp="col">start_date</th>
+      <th scope="col">Stipend</th>
+      <th scorp="col">Status</th>
+    </thead>
+     <tbody>
+      
+      <tr>
+        {% for row in req %}
+        <th scope="row">{{row.id}}</th>
+        
+        <td class="text-truncate" style="max-width: 100px;">
+          <a type="button" class="btn btn-primary">{{row.stud_name}}</a>
+        </td>
+        <td class="text-truncate" style="max-width: 100px;">
+            <a href="static/pdf/{{row['pdf']}}"><i class="fa fa-eye" aria-hidden="true"></i></a>
+        </td>
+        <td class="text-truncate" style="max-width: 100px;">
+          <a>{{row.title}}</a>
+      </td>
+      <td class="text-truncate" style="max-width: 100px;">
+        <a>{{row.freelance}}</a>
+    </td>
+     <td class="text-truncate" style="max-width: 100px;">
+      <a>{{row.start_date}}</a>
+   </td>
+   <td class="text-truncate" style="max-width: 100px;">
+    <a>{{row.stipend}}</a>
+   </td>
+   <td>
+    <span class="approved-btn"><a href="/freelance_selected/{{row.id}}">Approved</a></span>
+    <span class="approved-btn"><a href="/freelance_notselected/{{row.id}}">Reject</a></span>
+   </td>
+
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+  </div>
+
+</div>
+
+<!--End Main Content-->
+{% endblock %}

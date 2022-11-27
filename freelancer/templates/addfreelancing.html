@@ -1,0 +1,152 @@
+{% extends "layout.html" %}
+{% block body %}
+<!--Main Content -->
+<div class="account-page">
+ <link href="{{ url_for('static', filename= 'css/account_form.css') }}" rel="stylesheet">
+<h1 class="account-title"> Add Freelancing</h1>
+<form method="POST" action="">
+  {{ form.hidden_tag() }}
+<div class="donate">	
+  <label for="title">Title:</label><br>
+  {%if form.title.errors%}
+  {{form.title(class="account-page-inputbox",id="title",placeholder='Enter Title')}}
+  {%for error in form.title.errors%}
+  <span><span>{{error}}</span></span><br>
+  {%endfor%}
+  {%else%}
+  {{form.title(class="account-page-inputbox",id="title",placeholder='Enter Title')}}<br>
+  {%endif%}
+  <!-- <input type="text" class="account-page-inputbox" id="title" placeholder="Enter title"> -->
+  <br>
+
+  <label for="company">Company:</label><br>
+    {%if form.company.errors%}
+    {{form.company(class="account-page-inputbox",id="company",placeholder='Enter company Name')}}
+    {%for error in form.title.errors%} 
+    <span><span>{{error}}</span></span><br>
+    {%endfor%}
+    {%else%}
+    {{form.company(class="account-page-inputbox",id="company",placeholder='Enter company Name')}}
+    {%endif%}
+  <br>
+
+  <label for="description">Description:</label><br>
+    {%if form.description.errors%}
+    {{form.description(class="account-page-textarea",id="description",placeholder='Enter description')}}
+    {%for error in form.description.errors%} 
+    <span><span>{{error}}</span></span><br>
+    {%endfor%}
+    {%else%}
+    <!-- <textarea class="account-page-textarea"  id="description" placeholder="Enter description"></textarea> -->
+    {{form.description(class="account-page-textarea",id="description",placeholder='Enter description')}}
+    {%endif%}
+    <br>
+
+    <label for="skillrequired">Skill Required:</label><br>
+    {%if form.skillrequired.errors%}
+    {{form.skillrequired(class="account-page-inputbox",id="skillrequired",placeholder='Enter skillrequired')}}
+    {%for error in form.skillrequired.errors%} 
+    <span><span>{{error}}</span></span><br>
+    {%endfor%}
+    {%else%}
+    <!-- <input type="text" class="account-page-inputbox" id="skillrequired" placeholder="Enter Skill Required">-->
+    {{form.skillrequired(class="account-page-inputbox",id="skillrequired",placeholder='Enter skillrequired')}}
+    {%endif%}
+    <br>  
+ 
+    <label for="criteria">Criteria:</label><br>
+    {%if form.criteria.errors%}
+    {{form.criteria(class="account-page-inputbox",id="description",placeholder='Enter criteria')}}
+    {%for error in form.criteria.errors%} 
+    <span><span>{{error}}</span></span><br>
+    {%endfor%}
+    {%else%}
+    {{form.criteria(class="account-page-inputbox",id="description",placeholder='Enter criteria')}}
+    <!-- <input type="text" class="account-page-inputbox" id="title" placeholder="Enter title"> -->
+    {%endif%}
+    <br>
+
+  </div>
+  <div class="donate">
+   
+    <label for="location">Location</label><br>
+    {%if form.location.errors%}
+    {{form.location(class="account-page-inputbox",id="description",placeholder='Enter location')}}
+    {%for error in form.location.errors%} 
+    <span><span>{{error}}</span></span><br>
+    {%endfor%}
+    {%else%}
+    {{form.location(class="account-page-inputbox",id="description",placeholder='Enter location')}}
+    <!-- <input type="text" class="account-page-inputbox" id="location" placeholder="Select location"> -->
+    {%endif%}
+    <br>
+
+    <label for="freelance">Freelance Domain</label><br>
+    {%if form.freelance.errors%}
+    {{form.freelance(class="account-page-inputbox",id="description",placeholder='Enter freelance')}}
+    {%for error in form.freelance.errors%} 
+    <span><span>{{error}}</span></span><br>
+    {%endfor%}
+    {%else%}
+    <!-- <input type="text" class="account-page-inputbox" id="freelance" placeholder="Enter Freelance Domain"> -->
+    {{form.freelance(class="account-page-inputbox",id="description",placeholder='Enter freelance')}}
+    {%endif%}
+    <br>
+
+    <label for="workmod">Workmod</label>
+    {%if form.workmod.errors%}
+    {{form.workmod(class="account-page-inputbox",id="description",placeholder='Enter workmod')}}
+    {%for error in form.workmod.errors%} 
+    <span><span>{{error}}</span></span><br>
+    {%endfor%}
+    {%else%}
+    {{form.workmod(class="account-page-inputbox",id="description",placeholder='Enter workmod')}}
+    <!-- <input type="text" class="account-page-inputbox" id="workmod" placeholder="Select Workmod"> -->
+    {%endif%}
+    <br>
+
+    <label for="start_date">Start Date</label>
+    {%if form.start_date.errors%}
+    {{form.start_date(class="account-page-small-inputbox",id="start_date",)}}
+    {%for error in form.start_date.errors%} 
+    <span><span>{{error}}</span></span>
+    {%endfor%}
+    {%else%}
+    <!-- <input type="text" class="account-page-small-inputbox" id="start_date" placeholder="Start Date"> -->
+    {{form.start_date(class="account-page-small-inputbox",id="start_date")}}
+    {%endif%}
+    <br>
+
+    <label for="duration">Duration</label>
+    {%if form.duration.errors%}
+    {{form.duration(class="account-page-small-inputbox",id="description",placeholder='Select duration')}}
+    {%for error in form.duration.errors%} 
+    <span><span>{{error}}</span></span>
+    {%endfor%}
+    {%else%}
+    <!-- <input type="text" class="account-page-small-inputbox" id="duration" placeholder="Duration"> -->
+    {{form.duration(class="account-page-small-inputbox",id="description",placeholder='Select duration')}}
+    {%endif%}
+    <br><br>
+
+    
+    <label for="stipend">Stipend</label><br>
+    {%if form.stipend.errors%}
+    {{form.stipend(class="account-page-inputbox",id="stipend",placeholder='Enter Stipend')}}
+    {%for error in form.stipend.errors%} 
+    <span><span>{{error}}</span></span>
+    {%endfor%}
+    {%else%}
+    {{form.stipend(class="account-page-inputbox",id="stipend",placeholder='Enter Stipend')}}
+    <!-- <input type="text" class="account-page-inputbox" id="stipend" placeholder="select Stipend">-->
+    {%endif%}
+    <br> 
+
+    {{ form.submit()}}
+  </div> 
+</form> 
+
+</div>
+
+<!--End Home Page-->
+{% endblock %}

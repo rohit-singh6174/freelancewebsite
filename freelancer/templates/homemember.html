@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<!--Main Content -->
+
+<link href="{{ url_for('static', filename= 'css/admin_homechart.css') }}" rel="stylesheet">
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> <!--Pie -->
+<!--Bar graph-->
+<link href="{{ url_for('static', filename= 'css/bootstrap.min.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename= 'css/jumbotron-narrow.css') }}" rel="stylesheet">
+
+<script src="../static/js/jquery-1.11.2.js"></script>
+<script src="../static/js/Chart.min.js"></script>
+
+
+<div class="minerPage" >  
+
+<h1>Welcome {{session['name']}}</h1>
+
+<script type="text/javascript">
+  google.charts.load("current", {packages:["corechart"]});
+  google.charts.setOnLoadCallback(drawChart);
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ['Task', 'Hours per Day'],
+      ['Certified', {{summary_certified}}],
+      ['Completed', {{summary_completed}}]
+    ]);
+
+    var options = {
+      title: 'My Daily Activities',
+      is3D: true,
+    };
+
+    var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+    chart.draw(data, options);
+  }
+</script>
+
+  <h4>Summary</h4> 
+  <div class="stocks">  
+    <div id="piechart_3d" style="width: 700px; height: 400px;" ></div>
+      </div>
+
+</div>
+
+<script>
+ 
+  
+</script>
+
+<!--End Main Content-->
+{% endblock %}

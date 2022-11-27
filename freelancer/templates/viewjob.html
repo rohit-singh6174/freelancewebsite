@@ -1,0 +1,104 @@
+{% extends "studentlayout.html" %}
+{% block body %}
+    <br>
+    <div class="view-job-section">
+        <div class="job-title">
+          <h1> Title : {{freelance_view.title}} </h1>
+        </div><br>
+        <div class="job-details">
+            <h1>Description</h1>
+            <p>
+                {{freelance_view.description}}   
+            </p>
+            <br>
+            <hr>
+            <br>
+
+            <h1>Required Skills</h1>
+            <p>{{freelance_view.skillrequired}} </p>
+            <br>
+            <br>
+            <hr>
+            <br>
+
+            <h1>Criteria</h1>
+            <p>{{freelance_view.criteria}}</p>
+             <br>
+            <a id="viewjob-btn" href="#" class="viewjob-btn">
+             Apply
+            </a>
+            <br>
+            <br>
+        </div><br><br>
+
+        <div class="apply-pop">
+            <div class="pop-content">
+                <img class="apply-close" src="{{url_for('static', filename='img/close.png')}}" alt="close" with="20px" height="20px" class="close">
+                <img class="apply-logo" src="{{url_for('static', filename='img/job.png')}}" alt="Job" width="100px" height="100px">
+                <form method="POST" enctype="multipart/form-data" action="">
+                {{ form.hidden_tag() }}
+                 
+                <label for="name">Name:</label>  
+                {%if form.name.errors%}
+                {{form.name(placeholder='Enter name')}}
+                {%for error in form.name.errors%}
+                <span><span>{{error}}</span></span>
+                {%endfor%}
+                {%else%}
+                {{form.name(placeholder='Enter name')}}
+                {%endif%}
+
+                <!-- <input id="name" type="text" placeholder="Enter your Name"> -->
+                 <br>
+                 
+                 <label for="email" style="margin-left: 5px;">Email:</label>
+                 {%if form.email.errors%}
+                 {{form.email(placeholder='Enter email')}}
+                 {%for error in form.email.errors%}
+                 <span><span>{{error}}</span></span>
+                 {%endfor%}
+                 {%else%}
+                 {{form.email(placeholder='Enter email')}}
+                 {%endif%}  
+                 <!-- <input id="email" type="email" placeholder="Enter your Email"> -->
+                <br>
+
+                <p>
+                    <label for="email" style="margin-left: 5px;">CV:</label>
+                    {%if form.pdf.errors%}
+                    {{form.pdf(placeholder='Browse File')}}
+                    {%for error in form.pdf.errors%}
+                    <span><span>{{error}}</span></span>
+                    {%endfor%}
+                    {%else%}
+                    {{form.pdf(placeholder='Browse File')}}
+                    {%endif%} 
+        
+                     <!-- <input type="text" id="name" name="name" placeholder="name" required><i class="validation"><span></span><span></span></i></p>   -->
+                  </p>
+                  <br><br>
+                
+                {{form.submit(value="Register")}}
+                    <!-- <a class="apply-btn" href="#">Register</a> -->
+                    <br><br><br>
+
+                </form>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <script>
+        document.getElementById("viewjob-btn").addEventListener("click", function(){
+            document.querySelector(".apply-pop").style.display="flex";
+           
+        })
+
+        document.querySelector(".apply-close").addEventListener("click",function(){
+            document.querySelector(".apply-pop").style.display="none"
+        })
+    </script>
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<!--Main Content -->
+<link href="{{ url_for('static', filename= 'css/table.css') }}" rel="stylesheet">
+<div class="minerPage" >  
+
+<h1>Completed Freelance</h1>
+
+  <h4>freelancers</h4> 
+
+<div class="stocks">  
+<table class="table">
+    <thead class="tabel-head">
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scorp="col">title</th>
+      <th scope="col">freelance</th>
+      <th scorp="col">Start date</th>
+      <th scope="col">Completion date</th>
+      <th scope="col">View Certificate</th>
+      
+    </thead>
+     <tbody>
+      
+      <tr>
+        {% for row in view %}
+        <th scope="row">{{row.id}}</th>
+        
+        <td class="text-truncate" style="max-width: 100px;">
+          <a>{{row.name}}</a>
+        </td>
+        <td class="text-truncate" style="max-width: 150px;">
+            <a>{{row.email}}</a>
+        </td>
+        <td class="text-truncate" style="max-width: 300px;">
+          <a>{{row.title}}</a>
+      </td>
+      <td class="text-truncate" style="max-width: 100px;">
+        <a>{{row.freelance}}</a>
+    </td>
+     <td class="text-truncate" style="max-width: 50px;">
+      <a>{{row.start_date}}</a>
+   </td>
+   
+   <td class="text-truncate" style="max-width: 50px;">
+    <a>{{row.completion_date}}</a>
+ </td>
+ <td class="text-truncate" style="max-width: 10px;">
+  <a href="static/pdf/{{row['pdf']}}" type="button" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></i></a>
+</td>
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+  </div>
+
+</div>
+
+<!--End Main Content-->
+{% endblock %}

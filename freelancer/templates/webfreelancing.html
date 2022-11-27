@@ -1,0 +1,70 @@
+{% extends "studentlayout.html" %}
+{% block body %}
+    <br>
+
+    <div class="program-section">
+        <div class="filter-section">
+            <h1 class="title">{{f}}</h1>
+            <h2 class="title">Filter By</h2>
+            <label class="label">Location</label> 
+            <select class="combox" id="location">
+                <option value="mumbai">Mumbai</option>
+                <option value="delhi">Delhi</option>
+                <option value="pune">pune</option>
+                <option value="bangalore">Bangalore</option>
+              </select>
+              <label class="label">Stipend</label> 
+              <select style="margin-left: 10px;" class="combox" id="location">
+                  <option value="mumbai">free</option>
+                  <option value="delhi">1000 - 5000</option>
+                  <option value="pune">5000 - 10000</option>
+                  <option value="bangalore">10000 more</option>
+                </select>
+                
+                <label class="label">Online</label>
+                <input type="radio" checked="checked" name="radio"> <br>
+
+                <label class="label">Offline</label>
+                <input type="radio" name="radio">
+            </div>
+
+        <div class="item-section">
+        
+      
+            <!--item1 -->
+            {% for row in freelancing_list %}
+                    <div class="item"> 
+                           <div class="item-header">
+                           <label class="item-title">{{row.title}}</label>
+                           </div>
+                          <div class="item-data" style="width:70%">
+                             <div class="item-text">
+                               <label class="item-work">Location :  {{row.location}}</label><br><br>
+                               <label class="item-work">Start : {{row.start_date}}    | Duration  :  {{row.duration}}  |</label> <br><br>
+                               <label class="item-work">Rs {{row.stipend}}</label><br><br>
+                               <label class="item-work">{{row.workmod}}</label><br><br><br>
+                               <a href="/freelanceview/{{row.id}}" class="item-details-btn">View Details</a><br><br>
+                             </div>
+                         </div>
+
+                         <div class="item-data" style="float: right;">
+                            <div class="item-icon">
+                            <img src="{{url_for('static', filename='img/freelancing.png')}}" width="100px" height="100px" alt="company">     
+                            </div>
+                         </div>
+                    </div>
+            {%endfor%}
+
+        <!--item 1 end-->
+
+        
+           
+        
+           
+
+
+
+            
+        </div>
+    </div>
+    {% endblock %}

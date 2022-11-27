@@ -1,0 +1,66 @@
+{% extends "studentlayout.html" %}
+{% block body %}
+
+    <div class="heading-section">
+        <div class="header-box">
+            <div class="header-text">
+             <h1 class="header-title">Welcome {{user.name}}</h1>
+             <h2 class="header-para">Learn something New</h2>
+           </div>
+        </div>
+
+    </div><br>
+    <div class="summary-section">
+        <h1 class="section-heading">Achievements</h1>
+        <div class="status-section">
+            <h1 class="summary-title">Freelance Completed</h1><br>
+            <table>
+              <thead class="tabel-head">
+
+                <th>Company</th>
+                <th>Title</th>
+                <th>Freelance</th>
+                <th>Start date</th>
+                <th>End date</th>
+                <th>Certificate</th>
+                <th></th>
+
+             </thead>
+            <tbody>
+                
+                {% for row in viewcert %}
+                <tr>
+                <td>{{row.company}}</td>
+                <td>{{row.title}}</td>
+                <td>{{row.freelance}}</td>
+                <td>{{row.start_date}}</td>
+                <td>{{row.completion_date}}</td>
+                <td><a href="static/pdf/{{row['pdf']}}" >View</i></i></a></td>
+                </tr>
+                {%endfor%}
+            </tbody>
+
+            </table>
+        </div>
+        <div class="status-section">
+            <h1 class="summary-title">Freelancing Working</h1><br>
+            <table>
+                <thead class="tabel-head">
+                    <th>Company</th>
+                    <th>Title</th>
+                    <th>Freelancing</th>
+                    <th>Start date</th>
+                    </tr>
+                </thead>
+                        {% for row in viewwork %}
+                        <tr>
+                        <td>{{row.company}}</td>
+                        <td>{{row.title}}</td>
+                        <td>{{row.freelance}}</td>
+                        <td>{{row.start_date}}</td>
+                        </tr>
+                        {%endfor%}
+              </table>
+        </div>
+    </div>
+{% endblock %}
